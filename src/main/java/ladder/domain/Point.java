@@ -15,4 +15,7 @@ public class Point {
         return right;
     }
 
+    public Direction nextDirection() {
+        return Direction.of(left, right);
+    }
 }

@@ -22,5 +22,6 @@ public class Main {
         ov.printLadder(ladder);
 
         String resultKey = iv.resultKey();
+       ov.printResult(resultKey, names, results, ladder);
     }
 }

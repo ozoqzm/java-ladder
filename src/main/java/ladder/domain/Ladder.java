@@ -17,4 +17,21 @@ public class Ladder {
     public List<Line> getLines() {
         return lines;
     }
+
+    public int play(int startIndex) {
+        int currentPosition = startIndex; // 좌우
+
+        for (Line line : lines) {
+            List<Point> points = line.getPoints();
+            Point currentPoint = points.get(currentPosition); // 해당 인덱스의 포인트 반환
+
+            if (currentPoint.nextDirection() == Direction.LEFT)
+                currentPosition--;
+            else if (currentPoint.nextDirection() == Direction.RIGHT)
+                currentPosition++;
+            else
+                break;
+        }
+        return currentPosition;
+    }
 }
