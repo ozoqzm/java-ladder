@@ -18,7 +18,13 @@ public class OutputView {
             System.out.println();
         }
     }
-    public void printResult(String resultKey, List<String> names, List<String> results, Ladder ladder) {
+    public void printResults(List<String> results) {
+        for (String result : results) {
+            System.out.print(result + " ");
+        }
+        System.out.println();
+    }
+    public void printResultDetail(String resultKey, List<String> names, List<String> results, Ladder ladder) {
         // 전체 결과 출력
         if (resultKey.equals("all")) {
             for (int i = 0; i < names.size(); i++) {

@@ -20,8 +20,9 @@ public class Main {
 
         ov.printNames(names);
         ov.printLadder(ladder);
+        ov.printResults(results);
 
         String resultKey = iv.resultKey();
-       ov.printResult(resultKey, names, results, ladder);
+       ov.printResultDetail(resultKey, names, results, ladder);
     }
 }
