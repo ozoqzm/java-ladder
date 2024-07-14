@@ -26,6 +26,9 @@ public class Line {
     public List<Point> getPoints() {
         return points;
     }
+    public Line(List<Point> points) {   // 테스트 위해 추가함!!
+        this.points = points;
+    }
 
     public boolean createLine() {
         int num = (int) (Math.random() * 2); // 0 또는 1 난수 생성
@@ -34,12 +37,12 @@ public class Line {
 
     public void printLine() {
         StringBuilder builder = new StringBuilder();
-        builder.append("|");
+        builder.append("|"); // 왼쪽
         for (Point point : points) {
             if (point.getRight()) // 좌표가 오른쪽과 연결이 될 경우
                 builder.append("-----|");
             else
-                builder.append("|");
+                builder.append("     |");
         }
         System.out.println(builder.toString());
     }
