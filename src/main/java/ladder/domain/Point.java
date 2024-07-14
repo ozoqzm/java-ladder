@@ -15,7 +15,8 @@ public class Point {
         return right;
     }
 
+    // nextDirection 메서드 수정
     public Direction nextDirection() {
-        return Direction.of(left, right);
+        return Direction.fromBooleans(left, right);
     }
 }

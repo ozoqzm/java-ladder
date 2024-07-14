@@ -1,5 +1,7 @@
 package ladder;
 
+import ladder.domain.Direction;
+import ladder.domain.Ladder;
 import ladder.view.InputView;
 import ladder.domain.Line;
 import ladder.domain.Point;
@@ -31,6 +33,7 @@ public class LadderTest {
                 .isInstanceOf(IllegalArgumentException.class)
                 .hasMessageContaining("자동차 이름은 5자 이하여야 합니다.");
     }
+
     @Test
     void printLineTest() {
         PrintStream originalOut = System.out; // 기존 표준 출력 저장
@@ -50,4 +53,6 @@ public class LadderTest {
         // 원래 표준 출력 복원
         System.setOut(originalOut);
     }
+
+
 }

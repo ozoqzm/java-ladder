@@ -11,27 +11,23 @@ public class Ladder {
             lines.add(new Line(personCount));
         }
     }
-    public void setLines(List<Line> lines) {
-        this.lines = lines;
-    }
     public List<Line> getLines() {
         return lines;
     }
-
-    public int play(int startIndex) {
-        int currentPosition = startIndex; // 좌우
+    public int play(int startIndex, List<Line> lines) {
+        int currentPosition = startIndex;
 
         for (Line line : lines) {
             List<Point> points = line.getPoints();
-            Point currentPoint = points.get(currentPosition); // 해당 인덱스의 포인트 반환
+            Point currentPoint = points.get(currentPosition);
 
-            if (currentPoint.nextDirection() == Direction.LEFT)
+            if (currentPoint.nextDirection() == Direction.LEFT) {
                 currentPosition--;
-            else if (currentPoint.nextDirection() == Direction.RIGHT)
+            } else if (currentPoint.nextDirection() == Direction.RIGHT) {
                 currentPosition++;
-            else
-                break;
+            }
         }
         return currentPosition;
     }
+
 }
