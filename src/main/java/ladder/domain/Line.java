@@ -4,14 +4,19 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Line {
-    private List<Boolean> points = new ArrayList<>();
-    public Line (int personCount) {
-    // 라인의 좌표 값에 선이 있는지 유무를 판단하는 로직 추가
+    private List<Point> points = new ArrayList<>(); // Boolean에 가로 막대기 값
 
-
+    public Line(int personCount) {
+        // 라인의 좌표 값에 선이 있는지 유무를 판단하는 로직 추가
+        int size = personCount - 1;
+        points = new ArrayList<>(size);
+        for (int i = 0; i < size; i++) {
+            points.add(new Point(false));
+        }
     }
 
-    // 랜덤 라인 수 (사람수 -1) * 높이
-    // (사람 수 -1) 만큼... 마지막은 그냥 세로 줄만
-
+    public boolean createLine() {
+        int num = (int) (Math.random() * 2); // 0 또는 1 난수 생성
+        return num == 1;
+    }
 }
